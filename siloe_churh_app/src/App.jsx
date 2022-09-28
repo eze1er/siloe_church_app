@@ -11,7 +11,9 @@ import {   About,
   Video,
   Youth,
   Navbar,
-  Hero} from "./components";
+  Hero,
+  Footer,
+  CTA} from "./components";
 
 const App = () => (
   <div className="bg-primary w-full overflow-hidden">
@@ -37,7 +39,9 @@ const App = () => (
       <Video /> 
       <Store /> 
       <Registration /> 
+      <CTA />
       <Donation /> 
+      <Footer />
       </div>
     </div>
 

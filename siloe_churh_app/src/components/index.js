@@ -10,6 +10,9 @@ import Video from "./Video";
 import Youth from "./Youth";
 import Navbar from "./Navbar";
 import Hero from "./Hero";
+import Button from "./Button";
+import Footer from "./Footer";
+import CTA from "./CTA";
 
 export {
   About,
@@ -23,5 +26,8 @@ export {
   Video,
   Youth,
   Navbar,
-  Hero
+  Hero,
+  Button,
+  Footer,
+  CTA
 }
