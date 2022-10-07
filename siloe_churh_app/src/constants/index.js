@@ -14,24 +14,32 @@ export const navLinks = [
     title: "Youth",
   },
   {
-    id: "bornAgain",
-    title: "Born Again",
-  },
-  {
     id: "events",
     title: "Events",
-  },
-  {
-    id: "store",
-    title: "Store",
   },
   {
     id: "testimonials",
     title: "Testimonials",
   },
   {
+    id: "bornAgain",
+    title: "Born Again",
+  },
+  {
+    id: "videos",
+    title: "Videos",
+  },
+  {
+    id: "store",
+    title: "Store",
+  },
+  {
+    id: "registration",
+    title: "Registration",
+  },
+  {
     id: "donation",
-    title: "Donation",
+    title: "Donation ",
   },
 ];
 
