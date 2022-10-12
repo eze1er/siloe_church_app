@@ -15,7 +15,7 @@ import close from "./close.svg";
 import google from "./google.svg";
 import apple from "./apple.svg";
 import arrowUp from "./arrow-up.svg";
-import discount from "./Discount.svg";
+import message from "./Message.svg";
 import facebook from "./facebook.svg";
 import instagram from "./instagram.svg";
 import linkedin from "./linkedin.svg";
@@ -42,7 +42,7 @@ export {
   google,
   apple,
   arrowUp,
-  discount,
+  message,
   facebook,
   instagram,
   linkedin,
