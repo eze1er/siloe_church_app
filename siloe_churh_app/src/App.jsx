@@ -8,7 +8,7 @@ import {   About,
   Stats,
   Store,
   Testimonials,
-  Video,
+  Videos,
   Youth,
   Navbar,
   Hero,
@@ -36,7 +36,7 @@ const App = () => (
       <Events /> 
       <Testimonials /> 
       <BornAgain /> 
-      <Video /> 
+      <Videos /> 
       <Store /> 
       <Registration /> 
       <CTA />

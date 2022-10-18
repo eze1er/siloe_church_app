@@ -2,17 +2,18 @@ import { useState, useEffect } from "react";
 import { logo, message, robot } from "../assets";
 import styles from "../style";
 
-// import { fetchFromAPI } from "../utils/fetchFromAPI";
+import { fetchFromAPI } from "../utils/fetchFromAPI";
+import { Videos, VideoShow } from "../components";
+import Sidebar from "./Sidebar";
 const Hero = () => {
   const [video, setVideo] = useState(null);
-  const [selectedCategory, setSelectedCategory] = useState("new")
-  // useEffect(() => {
-  //   fetchFromAPI(`search?part=snippet&q=${selectedCategory}`)
-  //   .then((data) =>
-  //     setVideo(data.items)
-  //   );
-  // }, [selectedCategory]);
-
+  const [selectedCategory, setSelectedCategory] = useState("ezekiel-window-tv");
+  useEffect(() => {
+    fetchFromAPI(`search?part=snippet&q=${selectedCategory}`).then((data) =>
+      setVideo(data.items)
+    );
+  }, []);
+  // const video1 = video.
   return (
     <section
       id="home"
@@ -28,14 +29,19 @@ const Hero = () => {
             {"  "}
             <span className="text-white">
               Venez, et montons a la montagne de l'Eternel, A la maison du Dieu,
-              de Jacob, Afin qu'Il nous enseigne Ses voies, Et que nous marchions dans Ses sentiers.{" "}
+              de Jacob, Afin qu'Il nous enseigne Ses voies, Et que nous
+              marchions dans Ses sentiers.{" "}
             </span>{" "}
             <span className="text-gradient">Esaie 2:3</span>
-            
           </p>
         </div>
-        <iframe class="w-full aspect-[4/3] ..." src="https://www.youtube.com/watch?v=HtLnbNlGrQ4"></iframe>
-       
+
+        <Videos videos={video} />
+        <span className="">Ceci est le video de la semaine</span>
+      </div>
+      <div>
+        <Sidebar />
+        <VideoShow items={video} />
       </div>
     </section>
   );

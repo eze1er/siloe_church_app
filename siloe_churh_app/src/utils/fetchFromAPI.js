@@ -1,4 +1,5 @@
 import axios from "axios";
+// I need to know how to hide the key in .env in tailwind
 
 const BASE_URL = "https://youtube-v31.p.rapidapi.com";
 
@@ -7,7 +8,7 @@ const options = {
     maxResults: "50",
   },
   headers: {
-    "X-RapidAPI-Key": process.env.REACT_APP_RAPID_API_KEY,
+    "X-RapidAPI-Key": '3e0dd86e83mshfd00507d24fcab4p1fbfa8jsn1ec1f1c8d228',
     "X-RapidAPI-Host": "youtube-v31.p.rapidapi.com",
   },
 };
