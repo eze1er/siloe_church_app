@@ -14,6 +14,7 @@ const Hero = () => {
     );
   }, []);
   // const video1 = video.
+  console.log(video)
   return (
     <section
       id="home"
@@ -41,7 +42,7 @@ const Hero = () => {
       </div>
       <div>
         <Sidebar />
-        <VideoShow items={video} />
+        {/* <VideoShow items={video} /> */}
       </div>
     </section>
   );

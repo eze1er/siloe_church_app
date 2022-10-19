@@ -13,10 +13,13 @@ const Videos = ({ videos }) => {
       {videos?.map((item, idx) => (
         <Box key={idx}>
           {item.id.videoId &&
-            item.snippet.publishedAt.includes(getLastSunday().getDate()) && 
-            item.snippet.publishedAt.includes(getLastSunday().getDay() === 0 ) && 
-            item.snippet.publishedAt.includes(getLastSunday().getMonth() ) && 
-            (
+            item.snippet.channelTitle === "Ezekiel Windows TV" &&
+            item.snippet.publishedAt.includes(
+              getLastSunday().getDate() - 1
+            ) && (
+              // item.snippet.publishedAt.includes(getLastSunday().getDay() == 0 ) &&
+              // item.snippet.publishedAt.includes(getLastSunday().getMonth() ) &&
+
               <VideoCard video={item} />
             )}
         </Box>
