@@ -1,9 +1,14 @@
-import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Box } from "@mui/material";
+
 import styles from "./style";
-import {   About,
+
+import {
+  About,
   BornAgain,
   Donation,
   Events,
+  GoodWorks,
   Registration,
   Stats,
   Store,
@@ -13,39 +18,38 @@ import {   About,
   Navbar,
   Hero,
   Footer,
-  CTA} from "./components";
+  CTA,
+} from "./components";
 
 const App = () => (
+  <div>
+    <BrowserRouter>
+    
+
   <div className="bg-primary w-full overflow-hidden">
     <div className={`${styles.paddingX} ${styles.flexCenter}`}>
-    <div className={`${styles.boxWidth}`}>
-    <Navbar />
-    </div>
-    </div>
-
-    <div className={`bg-primary ${styles.flexStart}`}>
       <div className={`${styles.boxWidth}`}>
-    <Hero />
+        <Navbar />
+        <div className={`bg-primary ${styles.flexStart}`}>
+          <div className={`${styles.boxWidth}`}>
+            <Routes>
+              <Route path="/" exact element={<Hero />} />
+              <Route path="/about" exact element={<About />} />
+              <Route path="/events" exact element={<Events />} />
+              <Route path="/youth" exact element={<Youth />} />
+              <Route path="/testimonials" exact element={<Testimonials />} />
+              <Route path="/bornAgain" exact element={<BornAgain />} />
+              <Route path="/videos" exact element={<Videos />} />
+            </Routes>
+          </div>
+        </div>
+        <Footer />
       </div>
     </div>
-    <div className={`bg-primary ${styles.paddingX} ${styles.flexStart}`}>
-      <div className={`${styles.boxWidth}`}>
-      <Stats />
-      <About /> 
-      <Youth /> 
-      <Events /> 
-      <Testimonials /> 
-      <BornAgain /> 
-      <Videos /> 
-      <Store /> 
-      <Registration /> 
-      <CTA />
-      <Donation /> 
-      <Footer />
-      </div>
-    </div>
-
   </div>
+  </BrowserRouter>
+  </div>
+
 );
 
 export default App;

@@ -44,6 +44,7 @@ const Hero = () => {
         <Sidebar />
         {/* <VideoShow items={video} /> */}
       </div>
+      
     </section>
   );
 };
