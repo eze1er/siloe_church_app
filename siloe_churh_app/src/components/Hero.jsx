@@ -42,7 +42,7 @@ const Hero = () => {
       </div>
       <div>
         <Sidebar />
-        {/* <VideoShow items={video} /> */}
+        <VideoShow items={video} />
       </div>
       
     </section>
