@@ -16,8 +16,14 @@ import {
   Videos,
   Youth,
   Navbar,
+  NavbarVideos,
   Hero,
   Footer,
+  Feed,
+  Loader,
+  VideoDetail,
+  ChannelDetail,
+  SearchFeed,
   CTA,
 } from "./components";
 
@@ -32,16 +38,16 @@ const App = () => (
               <div className={`${styles.boxWidth}`}>
                 <Routes>
                   <Route path="/" exact element={<Hero />} />
-                  <Route path="/about" exact element={<About />} />
-                  <Route path="/events" exact element={<Events />} />
-                  <Route path="/youth" exact element={<Youth />} />
-                  <Route
-                    path="/testimonials"
-                    exact
-                    element={<Testimonials />}
+                  <Route path="/about" element={<About />} />
+                  <Route path="/events" element={<Events />} />
+                  <Route path="/youth" element={<Youth />} />
+                  <Route path="/video/:id" element={<VideoDetail />} />
+                  <Route path="/channel/:id" element={<ChannelDetail />} />
+                  <Route path="/search/:searchTerm" element={<SearchFeed />} />
+                  <Route path="/testimonials" element={<Testimonials />}
                   />
-                  <Route path="/bornAgain" exact element={<BornAgain />} />
-                  <Route path="/videos" exact element={<Videos />} />
+                  <Route path="/bornAgain" element={<BornAgain />} />
+                  {/* <Route path="/videos" element={<Videos />} /> */}
                 </Routes>
               </div>
             </div>

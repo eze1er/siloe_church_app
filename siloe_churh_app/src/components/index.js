@@ -10,16 +10,20 @@ import Testimonials from "./Testimonials";
 import Videos from "./Videos";
 import Youth from "./Youth";
 import Navbar from "./Navbar";
+import NavbarVideos from "./NavbarVideos";
 import Hero from "./Hero";
 import Button from "./Button";
 import Footer from "./Footer";
 import Feed from "./Feed";
+import Loader from "./Loader";
 import SearchFeed from "./SearchFeed";
 import SearchBar from "./SearchBar";
 import Sidebar from "./Sidebar";
 import VideoCard from "./VideoCard";
 import VideoShow from "./VideoShow";
+import VideoDetail from "./VideoDetail";
 import ChannelCard from "./ChannelCard";
+import ChannelDetail from "./ChannelDetail";
 import CTA from "./CTA";
 
 export {
@@ -38,12 +42,16 @@ export {
   Videos,
   Youth,
   Navbar,
+  NavbarVideos,
   Hero,
   Button,
   Footer,
   Feed,
+  Loader,
   VideoCard,
   ChannelCard,
+  ChannelDetail,
   VideoShow,
+  VideoDetail,
   CTA
 }

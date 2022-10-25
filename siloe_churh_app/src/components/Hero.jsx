@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { logo, message, robot } from "../assets";
+import { Box, Stack, Typography } from "@mui/material";
 import styles from "../style";
 
 import { fetchFromAPI } from "../utils/fetchFromAPI";
@@ -40,11 +41,6 @@ const Hero = () => {
         <Videos videos={video} />
         <span className="">Ceci est le video de la semaine</span>
       </div>
-      <div>
-        <Sidebar />
-        <VideoShow items={video} />
-      </div>
-      
     </section>
   );
 };
