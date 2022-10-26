@@ -17,7 +17,7 @@ const Navbar = () => {
               index === navLinks.length - 1 ? "mar-0 text-red-600" : "mr-10 text-white"
             } `}
           >
-            <a href={`#${nav.id}`}>{nav.title}</a>
+            <a href={`${nav.id}`}>{nav.title}</a>
           </li>
         ))}
       </ul>
@@ -41,7 +41,7 @@ const Navbar = () => {
                   index === navLinks.length - 1 ? "mar-0 text-red-600" : "mb-4 text-white"
                 }`}
               >
-                <a href={`#${nav.id}`}>{nav.title}</a>
+                <a href={`${nav.id}`}>{nav.title}</a>
               </li>
             ))}
           </ul>

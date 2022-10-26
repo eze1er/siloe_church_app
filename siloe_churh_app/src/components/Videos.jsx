@@ -1,29 +1,21 @@
-import { Stack, Box } from "@mui/system";
-import { VideoCard } from "./";
+import { Stack, Box } from "@mui/material";
+import { VideoCard, ChannelCard, Loader } from ".";
 
-function getLastSunday(d) {
-  let t = new Date();
-  t.setDate(t.getDate() - t.getDay());
-  return t;
-}
+const Videos = ({ videos, direction }) => {
+  if (!videos?.length) return <Loader />;
 
-const Videos = ({ videos }) => {
-  console.log(videos)
   return (
-    <Stack direction="row" flexWrap="wrap" justifyContent="start" gap={2}>
-      {videos?.map((item, idx) => (
-        <Box key={idx}>
-          {item.id.videoId &&
-            item.snippet.channelTitle === "Ezekiel Windows TV" &&
-            item.snippet.publishedAt.includes("2022-10-17") &&
-            // item.snippet.publishedAt.includes(
-            //   getLastSunday().getDate() - 1
-            // ) && (
-            //   // item.snippet.publishedAt.includes(getLastSunday().getDay() == 0 ) &&
-            //   item.snippet.publishedAt.includes(getLastSunday().getMonth() ) &&
-
-              <VideoCard video={item} />
-            }
+    <Stack
+      direction={direction || "row"}
+      flexWrap="wrap"
+      justifyContent="start"
+      alignItems="start"
+      gap={2}
+    >
+      {videos.map((item, index) => (
+        <Box key={index}>
+          {item.id.videoId && <VideoCard video={item} />}
+          {item.id.channelId && <ChannelCard channelDetail={item} />}
         </Box>
       ))}
     </Stack>
