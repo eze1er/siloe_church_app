@@ -6,16 +6,28 @@ import styles from "../style";
 import { fetchFromAPI } from "../utils/fetchFromAPI";
 import { Videos, VideoShow } from "../components";
 import Sidebar from "./Sidebar";
+
 const Hero = () => {
   const [video, setVideo] = useState(null);
-  const [selectedCategory, setSelectedCategory] = useState("ezekiel-window-tv");
+  const [videoOne, setVideoOne] = useState(null)
+  const [selectedCategory, setSelectedCategory] = useState("Ezekiel window tv");
   useEffect(() => {
     fetchFromAPI(`search?part=snippet&q=${selectedCategory}`).then((data) =>
       setVideo(data.items)
     );
   }, []);
-  // const video1 = video.
-  console.log(video)
+  console.log(video);
+
+//   const video11 = video?.find(
+//     item => item.snippet.publishedAt.includes('2022-10-17T05:57:39Z')
+//   );
+
+//   if (video11) {
+//     setVideoOne(video11)
+// } 
+
+// console.log("voici l'homme ", videoOne);
+
   return (
     <section
       id="home"
@@ -38,8 +50,14 @@ const Hero = () => {
           </p>
         </div>
 
+        {/* <Videos videos={videoOne} /> */}
+        {video?.map((item) => (
+          item.snippet.publishedAt.includes('2022-10-17') &&
         <Videos videos={video} />
-        <span className="">Ceci est le video de la semaine</span>
+
+        ))}
+
+        {/* <span className="">Ceci est le video de la semaine</span> */}
       </div>
     </section>
   );

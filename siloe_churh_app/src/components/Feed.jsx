@@ -5,7 +5,7 @@ import { Sidebar, Videos, NavbarVideos } from "./";
 import { fetchFromAPI } from "../utils/fetchFromAPI";
 
 const Feed = () => {
-  const [selectedCategory, setSelectedCategory] = useState("New");
+  const [selectedCategory, setSelectedCategory] = useState("Ezekiel window TV");
   const [videos, setVideos] = useState([]);
 
   useEffect(() => {

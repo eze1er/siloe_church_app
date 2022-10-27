@@ -44,10 +44,11 @@ const App = () => (
                   <Route path="/video/:id" element={<VideoDetail />} />
                   <Route path="/channel/:id" element={<ChannelDetail />} />
                   <Route path="/search/:searchTerm" element={<SearchFeed />} />
+                  <Route path="/donation" element={<Donation />} />
                   <Route path="/testimonials" element={<Testimonials />}
                   />
                   <Route path="/bornAgain" element={<BornAgain />} />
-                  <Route path="/videos" element={<Videos />} />
+                  <Route path="/videos" element={<Feed />} />
                 </Routes>
               </div>
             </div>
