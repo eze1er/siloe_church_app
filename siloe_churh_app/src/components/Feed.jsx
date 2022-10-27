@@ -23,7 +23,7 @@ const Feed = () => {
           px: { sx: 0, md: 2 },
         }}
       >
-        {/* <NavbarVideos /> */}
+        <NavbarVideos />
         <Sidebar
           selectedCategory={selectedCategory}
           setSelectedCategory={setSelectedCategory}

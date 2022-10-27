@@ -260,7 +260,6 @@ export const clients = [
 export const logo = "https://i.ibb.co/s9Qys2j/logo.png";
 
 export const categories = [
-  { name: "New", icon: "<HomeIcon />" },
   { name: "Ezekiel-windows", icon: "<ConnectedTvIcon />" },
   { name: "Gospel", icon: "<LibraryMusicIcon />" },
   { name: "archéologie-en-terre-d'israël", icon: "<HistoryIcon />" },
