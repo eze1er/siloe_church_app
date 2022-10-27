@@ -15,10 +15,18 @@ const Hero = () => {
       setVideo(data.items)
     );
   }, []);
-  console.log(video);
+  // console.log(video);
 
-  const videoOne = video?.filter(ele => ele.snippet.channelId === "UC_-rI0d4c6AmGA_3p2-ls9w" && ele.snippet.publishedAt.includes('2022-10-24T07:09:11Z')) 
-  console.log(videoOne);
+  const curr = new Date();
+  const first = curr.getDate() - curr.getDay() + 1; 
+
+  const firstDay = new Date(curr.setDate(first)).toISOString().slice(0, 10);
+
+  const videoOne = video?.filter(
+    (ele) =>
+      ele.snippet.channelId === "UC_-rI0d4c6AmGA_3p2-ls9w" &&
+      ele.snippet.publishedAt.includes(`${firstDay}`)
+  );
 
   return (
     <section
@@ -42,10 +50,12 @@ const Hero = () => {
           </p>
         </div>
 
-        {video?.map((item, idx) => (
-          item.snippet.publishedAt.includes('2022-10-24T07:09:11Z') &&
-        <Videos videos={videoOne} />
-        ))}
+        {video?.map(
+          (item, idx) =>
+            item.snippet.publishedAt.includes(`${firstDay}`) && (
+              <Videos key={idx} videos={videoOne} />
+            )
+        )}
 
         {/* <span className="">Ceci est le video de la semaine</span> */}
       </div>
