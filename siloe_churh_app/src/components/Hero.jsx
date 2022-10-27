@@ -9,8 +9,7 @@ import Sidebar from "./Sidebar";
 
 const Hero = () => {
   const [video, setVideo] = useState(null);
-  const [videoOne, setVideoOne] = useState(null)
-  const [selectedCategory, setSelectedCategory] = useState("Ezekiel window tv");
+  const [selectedCategory, setSelectedCategory] = useState("ezekiel-window-tv");
   useEffect(() => {
     fetchFromAPI(`search?part=snippet&q=${selectedCategory}`).then((data) =>
       setVideo(data.items)
@@ -18,15 +17,8 @@ const Hero = () => {
   }, []);
   console.log(video);
 
-//   const video11 = video?.find(
-//     item => item.snippet.publishedAt.includes('2022-10-17T05:57:39Z')
-//   );
-
-//   if (video11) {
-//     setVideoOne(video11)
-// } 
-
-// console.log("voici l'homme ", videoOne);
+  const videoOne = video?.filter(ele => ele.snippet.channelId === "UC_-rI0d4c6AmGA_3p2-ls9w" && ele.snippet.publishedAt.includes('2022-10-24T07:09:11Z')) 
+  console.log(videoOne);
 
   return (
     <section
@@ -50,11 +42,9 @@ const Hero = () => {
           </p>
         </div>
 
-        {/* <Videos videos={videoOne} /> */}
-        {video?.map((item) => (
-          item.snippet.publishedAt.includes('2022-10-17') &&
-        <Videos videos={video} />
-
+        {video?.map((item, idx) => (
+          item.snippet.publishedAt.includes('2022-10-24T07:09:11Z') &&
+        <Videos videos={videoOne} />
         ))}
 
         {/* <span className="">Ceci est le video de la semaine</span> */}
