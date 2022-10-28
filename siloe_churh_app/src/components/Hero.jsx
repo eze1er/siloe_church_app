@@ -18,7 +18,7 @@ const Hero = () => {
   // console.log(video);
 
   const curr = new Date();
-  const first = curr.getDate() - curr.getDay() + 1; 
+  const first = curr.getDate() - curr.getDay() + 1;
 
   const firstDay = new Date(curr.setDate(first)).toISOString().slice(0, 10);
 
@@ -58,6 +58,13 @@ const Hero = () => {
         )}
 
         {/* <span className="">Ceci est le video de la semaine</span> */}
+      </div>
+      <div className="flex flex-row justify-between items-center w-full">
+        <h1 className="flex-1 font-poppins font-semibold ss:text-[72px] text-[52px] text-white">
+          Soyez le bienvenue <br className="sm:block hidden" />
+          <span className="text-gradient">A L'Eglise Siloe</span>{" "}
+          Laporte vous est grandement ouverte..
+        </h1>
       </div>
     </section>
   );
