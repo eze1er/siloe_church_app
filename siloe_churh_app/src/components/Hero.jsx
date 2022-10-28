@@ -49,22 +49,24 @@ const Hero = () => {
             <span className="text-gradient">Esaie 2:3</span>
           </p>
         </div>
+        <div className="flex flex-row justify-between items-center w-full">
+          <div>
+            {video?.map(
+              (item, idx) =>
+                item.snippet.publishedAt.includes(`${firstDay}`) && (
+                  <Videos key={idx} videos={videoOne} />
+                )
+            )}
+          </div>
 
-        {video?.map(
-          (item, idx) =>
-            item.snippet.publishedAt.includes(`${firstDay}`) && (
-              <Videos key={idx} videos={videoOne} />
-            )
-        )}
-
-        {/* <span className="">Ceci est le video de la semaine</span> */}
-      </div>
-      <div className="flex flex-row justify-between items-center w-full">
-        <h1 className="flex-1 font-poppins font-semibold ss:text-[72px] text-[52px] text-white">
-          Soyez le bienvenue <br className="sm:block hidden" />
-          <span className="text-gradient">A L'Eglise Siloe</span>{" "}
-          Laporte vous est grandement ouverte..
-        </h1>
+          <div>
+            <h1 className="flex-1 font-poppins font-semibold ss:text-[72px] text-[52px] text-white ss:leading-[100px] leading-[75px]">
+              Soyez le bienvenue <br className="sm:block hidden" />
+              <span className="text-gradient">A L'Eglise Siloe.</span> <br />
+              La porte Vous est grandement ouverte..
+            </h1>
+          </div>
+        </div>
       </div>
     </section>
   );
