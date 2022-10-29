@@ -4,7 +4,7 @@ import { Box, Stack, Typography } from "@mui/material";
 import styles from "../style";
 
 import { fetchFromAPI } from "../utils/fetchFromAPI";
-import { Videos, VideoShow } from "../components";
+import { Videos, VideoShow, GetStarted } from "../components";
 import Sidebar from "./Sidebar";
 
 const Hero = () => {

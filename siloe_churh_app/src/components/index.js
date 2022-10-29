@@ -2,6 +2,7 @@ import About from "./About";
 import BornAgain from "./BornAgain";
 import Donation from "./Donation";
 import Events from "./Events";
+import GetStarted from "./GetStarted";
 import GoodWorks from "./GoodWorks";
 import Registration from "./Registration";
 import Stats from "./Stats";
@@ -32,6 +33,7 @@ export {
   Donation,
   Events,
   GoodWorks,
+  GetStarted,
   Registration,
   Stats,
   Store,
