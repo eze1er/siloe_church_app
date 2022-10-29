@@ -65,6 +65,9 @@ const Hero = () => {
               <span className="text-gradient">A L'Eglise Siloe.</span> <br />
               La porte Vous est grandement ouverte..
             </h1>
+            <div className="ss:flex hidden md:mr-4 mr-0">
+              <GetStarted />
+            </div>
           </div>
         </div>
       </div>
