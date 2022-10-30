@@ -14,8 +14,8 @@ import {
   Stats,
   Store,
   Testimonials,
-  Videos,
-  Youth,
+  // Videos,
+  // Youth,
   Navbar,
   NavbarVideos,
   Footer,
@@ -30,6 +30,8 @@ import {
 const Hero = lazy(() => import("./components/Hero"));
 const About = lazy(() => import("./components/About"));
 const Events = lazy(() => import("./components/Events"));
+const Youth = lazy(() => import("./components/Youth"));
+const Videos = lazy(() => import("./components/Videos"));
 
 const App = () => (
   <div>
@@ -45,7 +47,7 @@ const App = () => (
                     <Route path="/" exact element={<Hero />} />
                     <Route path="/about" element={<About />} />
                     <Route path="/events" element={<Events />} />
-                    {/* <Route path="/youth" element={<Youth />} />
+                    <Route path="/youth" element={<Youth />} />
                   <Route path="/video/:id" element={<VideoDetail />} />
                   <Route path="/channel/:id" element={<ChannelDetail />} />
                   <Route path="/search/:searchTerm" element={<SearchFeed />} />
@@ -53,7 +55,7 @@ const App = () => (
                   <Route path="/testimonials" element={<Testimonials />}
                   />
                   <Route path="/bornAgain" element={<BornAgain />} />
-                  <Route path="/videos" element={<Feed />} /> */}
+                  <Route path="/videos" element={<Feed />} />
                   </Routes>
                 </Suspense>
               </div>
