@@ -63,12 +63,19 @@ const Hero = () => {
             <h1 className="flex-1 font-poppins font-semibold ss:text-[72px] text-[52px] text-white ss:leading-[100px] leading-[75px]">
               Soyez le bienvenue <br className="sm:block hidden" />
               <span className="text-gradient">A L'Eglise Siloe.</span> <br />
-              La porte Vous est grandement ouverte..
             </h1>
             <div className="ss:flex hidden md:mr-4 mr-0">
               <GetStarted />
             </div>
           </div>
+          <h1 className="font-poppins font-semibold ss:text-[68px] text-[52px] text-white ss:leading-[100px] leading-[75px] w-full">
+              Soyez le bienvenue <br className="sm:block hidden" />
+              La porte Vous est grandement ouverte.
+            </h1>
+            <p className={`${styles.paragraph} max-w-[470px] mt-5`}>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptates harum nisi fugiat neque, at magnam eos possimus ullam atque commodi voluptatem accusantium dicta eum eaque provident culpa fugit? Maiores, laborum.</p>
+        </div>
+        <div>
+          <img src={robot} alt="billing" className="w-[100%] h-[100%] relative z-[5]" />
         </div>
       </div>
     </section>

@@ -1,13 +1,14 @@
+import { lazy, Suspense } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Box } from "@mui/material";
 
 import styles from "./style";
 
 import {
-  About,
+  // About,
   BornAgain,
   Donation,
-  Events,
+  // Events,
   GoodWorks,
   Registration,
   Stats,
@@ -17,7 +18,6 @@ import {
   Youth,
   Navbar,
   NavbarVideos,
-  Hero,
   Footer,
   Feed,
   Loader,
@@ -26,6 +26,10 @@ import {
   SearchFeed,
   CTA,
 } from "./components";
+
+const Hero = lazy(() => import("./components/Hero"));
+const About = lazy(() => import("./components/About"));
+const Events = lazy(() => import("./components/Events"));
 
 const App = () => (
   <div>
@@ -36,11 +40,12 @@ const App = () => (
             <Navbar />
             <div className={`bg-primary ${styles.flexStart}`}>
               <div className={`${styles.boxWidth}`}>
-                <Routes>
-                  <Route path="/" exact element={<Hero />} />
-                  <Route path="/about" element={<About />} />
-                  <Route path="/events" element={<Events />} />
-                  <Route path="/youth" element={<Youth />} />
+                <Suspense fallback={<h1>lOADING..</h1>}>
+                  <Routes>
+                    <Route path="/" exact element={<Hero />} />
+                    <Route path="/about" element={<About />} />
+                    <Route path="/events" element={<Events />} />
+                    {/* <Route path="/youth" element={<Youth />} />
                   <Route path="/video/:id" element={<VideoDetail />} />
                   <Route path="/channel/:id" element={<ChannelDetail />} />
                   <Route path="/search/:searchTerm" element={<SearchFeed />} />
@@ -48,8 +53,9 @@ const App = () => (
                   <Route path="/testimonials" element={<Testimonials />}
                   />
                   <Route path="/bornAgain" element={<BornAgain />} />
-                  <Route path="/videos" element={<Feed />} />
-                </Routes>
+                  <Route path="/videos" element={<Feed />} /> */}
+                  </Routes>
+                </Suspense>
               </div>
             </div>
             <Footer />
