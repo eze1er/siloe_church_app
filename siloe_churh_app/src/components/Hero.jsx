@@ -17,10 +17,27 @@ const Hero = () => {
   }, []);
   // console.log(video);
 
-  const curr = new Date();
-  const first = curr.getDate() - curr.getDay() + 1;
+  let curr = new Date();
+  let first = curr.getDate() - curr.getDay() + 1;
 
-  const firstDay = new Date(curr.setDate(first)).toISOString().slice(0, 10);
+  let firstDay = new Date(curr.setDate(first)).toISOString().slice(0, 10);
+
+  if (firstDay === curr.toISOString().slice(0, 10)) {
+    console.log("curr = First")
+    // var date = new Date();
+    // date; //# => Fri Apr 01 2011 11:14:50 GMT+0200 (CEST)
+
+    // date.setDate(date.getDate() - 1);
+
+    curr.setDate(curr.getDate() - 1);
+    first = curr.getDate() - curr.getDay() + 1;
+    console.log('first == ', first)
+    
+    firstDay = new Date(curr.setDate(first)).toISOString().slice(0, 10);
+    console.log("new curr", curr)
+    console.log("new FirstDay = ", firstDay)
+    // date; //# => Thu Mar 31 2011 11:14:50 GMT+0200 (CEST)
+  }
 
   const videoOne = video?.filter(
     (ele) =>
@@ -51,11 +68,12 @@ const Hero = () => {
         </div>
         <div className="flex flex-row justify-between items-center w-full">
           <div>
-            {video?.map(
-              (item, idx) =>
-                item.snippet.publishedAt.includes(`${firstDay}`) && (
-                  <Videos key={idx} videos={videoOne} />
-                )
+            {video?.map((item, idx) =>
+              item.snippet.publishedAt.includes(`${firstDay}`) ? (
+                <Videos key={idx} videos={videoOne} />
+              ) : (
+                <Videos videos={video} />
+              )
             )}
           </div>
 
@@ -69,13 +87,22 @@ const Hero = () => {
             </div>
           </div>
           <h1 className="font-poppins font-semibold ss:text-[68px] text-[52px] text-white ss:leading-[100px] leading-[75px] w-full">
-              Soyez le bienvenue <br className="sm:block hidden" />
-              La porte Vous est grandement ouverte.
-            </h1>
-            <p className={`${styles.paragraph} max-w-[470px] mt-5`}>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptates harum nisi fugiat neque, at magnam eos possimus ullam atque commodi voluptatem accusantium dicta eum eaque provident culpa fugit? Maiores, laborum.</p>
+            Soyez le bienvenue <br className="sm:block hidden" />
+            La porte Vous est grandement ouverte.
+          </h1>
+          <p className={`${styles.paragraph} max-w-[470px] mt-5`}>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptates
+            harum nisi fugiat neque, at magnam eos possimus ullam atque commodi
+            voluptatem accusantium dicta eum eaque provident culpa fugit?
+            Maiores, laborum.
+          </p>
         </div>
         <div>
-          <img src={robot} alt="billing" className="w-[100%] h-[100%] relative z-[5]" />
+          <img
+            src={robot}
+            alt="billing"
+            className="w-[100%] h-[100%] relative z-[5]"
+          />
         </div>
       </div>
     </section>
