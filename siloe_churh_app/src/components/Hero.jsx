@@ -22,22 +22,22 @@ const Hero = () => {
 
   let firstDay = new Date(curr.setDate(first)).toISOString().slice(0, 10);
 
-  if (firstDay === curr.toISOString().slice(0, 10)) {
-    console.log("curr = First")
-    // var date = new Date();
-    // date; //# => Fri Apr 01 2011 11:14:50 GMT+0200 (CEST)
+  // if (firstDay === curr.toISOString().slice(0, 10)) {
+  //   console.log("curr = First")
+  //   // var date = new Date();
+  //   // date; //# => Fri Apr 01 2011 11:14:50 GMT+0200 (CEST)
 
-    // date.setDate(date.getDate() - 1);
+  //   // date.setDate(date.getDate() - 1);
 
-    curr.setDate(curr.getDate() - 1);
-    first = curr.getDate() - curr.getDay() + 1;
-    console.log('first == ', first)
+  //   curr.setDate(curr.getDate() - 1);
+  //   first = curr.getDate() - curr.getDay() + 1;
+  //   console.log('first == ', first)
     
-    firstDay = new Date(curr.setDate(first)).toISOString().slice(0, 10);
-    console.log("new curr", curr)
-    console.log("new FirstDay = ", firstDay)
-    // date; //# => Thu Mar 31 2011 11:14:50 GMT+0200 (CEST)
-  }
+  //   firstDay = new Date(curr.setDate(first)).toISOString().slice(0, 10);
+  //   console.log("new curr", curr)
+  //   console.log("new FirstDay = ", firstDay)
+  //   // date; //# => Thu Mar 31 2011 11:14:50 GMT+0200 (CEST)
+  // }
 
   const videoOne = video?.filter(
     (ele) =>
